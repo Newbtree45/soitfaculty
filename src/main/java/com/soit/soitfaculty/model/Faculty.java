@@ -1,25 +1,26 @@
 package com.soit.soitfaculty.model;
 
 public class Faculty {
-	
+
 	private int id;
 	private String firstName;
-	private String lastName;	
+	private String lastName;
 	private String email;
-	
+
 	/***
 	 * A blank Faculty constructor
 	 */
 	public Faculty() {
-		
+
 	}
 
 	/***
 	 * A Faculty constructor that takes parameters.
-	 * @param id Id of the faculty
+	 * 
+	 * @param id        Id of the faculty
 	 * @param firstName First name of the faculty
-	 * @param lastName Last name of the faculty
-	 * @param email Email of the faculty
+	 * @param lastName  Last name of the faculty
+	 * @param email     Email of the faculty
 	 */
 	public Faculty(int id, String firstName, String lastName, String email) {
 		super();
