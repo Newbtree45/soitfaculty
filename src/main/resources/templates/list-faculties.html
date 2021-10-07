@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" xlms:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+	crossorigin="anonymous">
+
 <title>Insert title here</title>
 </head>
 <body>
 
-	<h4>School Of IT Faculty Directory</h4>
-	<hr>
-	<table border="1">
-		<thead>
+	<div class="container">
 
-			<tr>
-				<th>FirstName</th>
-				<th>LastName</th>
-				<th>Email</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="theFaculties : ${faculties}">
-				<td th:text="${theFaculties.firstName}"></td>
-				<td th:text="${theFaculties.lastName}"></td>
-				<td th:text="${theFaculties.email}"></td>	
-			</tr>
-		</tbody>
 
-	</table>
+
+		<h4>School Of IT Faculty Directory</h4>
+		<hr>
+		<table class="table table-bordered">
+			<thead>
+
+				<tr class="bg-danger">
+					<th>FirstName</th>
+					<th>LastName</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="theFaculties : ${faculties}">
+					<td th:text="${theFaculties.firstName}"></td>
+					<td th:text="${theFaculties.lastName}"></td>
+					<td th:text="${theFaculties.email}"></td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
 
 </body>
 </html>
