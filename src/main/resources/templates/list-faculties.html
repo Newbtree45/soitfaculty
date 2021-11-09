@@ -28,6 +28,7 @@
 				<tr class="bg-danger">
 					<th>FirstName</th>
 					<th>LastName</th>
+					<th>Title</th>
 					<th>Email</th>
 				</tr>
 			</thead>
@@ -35,6 +36,7 @@
 				<tr th:each="theFaculties : ${faculties}">
 					<td th:text="${theFaculties.firstName}"></td>
 					<td th:text="${theFaculties.lastName}"></td>
+					<td th:text="${theFaculties.Title}"></td>
 					<td th:text="${theFaculties.email}"></td>
 				</tr>
 			</tbody>

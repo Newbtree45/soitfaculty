@@ -1,10 +1,35 @@
-package com.soit.soitfaculty.model;
+package com.soit.soitfaculty.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="faculty")
 public class Faculty {
-
+	
+	
+	//Set the filed
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
+	@Column(name="id")
 	private int id;
+	
+	@Column(name="first_name")
 	private String firstName;
+	
+	@Column(name="last_name")
 	private String lastName;
+	
+	@Column(name="Title")
+	private String title;
+	
+	@Column(name="email")
 	private String email;
 
 	/***
@@ -22,14 +47,16 @@ public class Faculty {
 	 * @param lastName  Last name of the faculty
 	 * @param email     Email of the faculty
 	 */
-	public Faculty(int id, String firstName, String lastName, String email) {
+	public Faculty(int id, String firstName, String lastName,String title, String email) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.title = title;
 		this.email = email;
 	}
 
+	// Getters and Setters
 	public int getId() {
 		return id;
 	}
@@ -53,6 +80,14 @@ public class Faculty {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
 	public String getEmail() {
 		return email;
@@ -62,9 +97,10 @@ public class Faculty {
 		this.email = email;
 	}
 
+	// To String method
 	@Override
 	public String toString() {
-		return "Faculty [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+		return "Faculty [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", title="+ title + ", email=" + email + "]";
 	}
 
 }
