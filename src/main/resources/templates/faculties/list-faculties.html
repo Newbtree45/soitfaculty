@@ -22,7 +22,11 @@
 
 		<h4>School Of IT Faculty Directory</h4>
 		<hr>
-		<table class="table table-bordered">
+		
+		<!-- Create a button to add new faculty -->
+		<a th:href="@(/Faculties/viewAddForm)"class"btn btn-dark btn-sm mb-2">Add New Faculty Here</a>
+		
+		<table class="table table-bordered table-dark">
 			<thead>
 
 				<tr class="bg-danger">
@@ -30,6 +34,7 @@
 					<th>LastName</th>
 					<th>Title</th>
 					<th>Email</th>
+					<th>Update Info</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -38,6 +43,16 @@
 					<td th:text="${theFaculties.lastName}"></td>
 					<td th:text="${theFaculties.Title}"></td>
 					<td th:text="${theFaculties.email}"></td>
+					
+					<!-- Update Button -->
+					<td>
+					<a th:href="@{/Faculties/viewUpdateForm(facultyId=${theFaculty.id})}"
+					class="btn btn-light btn-sm">Update</a>
+					
+					<!-- Delete Button -->
+					<td>
+					<a th:href="@{/Faculties/delete(facultyId=${theFaculty.id})}"
+					class="btn btn-danger btn-sm"onclick="if(!(confirm('Please confirm that you want to delete this Faculty')))return false">Delete</a>
 				</tr>
 			</tbody>
 
